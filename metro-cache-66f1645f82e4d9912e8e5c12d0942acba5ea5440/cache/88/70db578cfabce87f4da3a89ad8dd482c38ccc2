@@ -1,0 +1,12 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+	module.exports = require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+		"__packager_asset": true,
+		"httpServerLocation": "/assets/src/components",
+		"width": 2980,
+		"height": 3344,
+		"scales": [1],
+		"hash": "54749373eece8ef13f946b4bfb93879b",
+		"name": "brain",
+		"type": "jpg"
+	});
+});

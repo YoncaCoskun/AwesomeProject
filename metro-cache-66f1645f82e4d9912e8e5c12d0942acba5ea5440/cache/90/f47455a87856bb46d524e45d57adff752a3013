@@ -1,0 +1,64 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var _jsxFileName = "/Users/yoncacoskun/Desktop/ReactNative/AwesomeProject/src/components/CardItem.js";
+
+  var _react = require(_dependencyMap[0], "react");
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _reactNative = require(_dependencyMap[1], "react-native");
+
+  var _QuesScreen = require(_dependencyMap[2], "./QuesScreen");
+
+  var _QuesScreen2 = _interopRequireDefault(_QuesScreen);
+
+  var _reactNativeAnimatedHeaderScrollView = require(_dependencyMap[3], "react-native-animated-header-scroll-view");
+
+  var _reactNativeAnimatedHeaderScrollView2 = _interopRequireDefault(_reactNativeAnimatedHeaderScrollView);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var CardItem = function CardItem(props) {
+    var containerStyle = styles.containerStyle;
+    return _react2.default.createElement(
+      _reactNative.View,
+      {
+        style: containerStyle,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 9
+        }
+      },
+      props.children
+    );
+  };
+
+  var styles = {
+    containerStyle: {
+      borderWidth: 1,
+      borderRadius: 2,
+      borderBottomWidth: 0,
+      shadowColor: '#ddd',
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 2,
+      elevation: 1,
+      borderBottomWidth: 1,
+      padding: 5,
+      backgroundColor: '#fff',
+      justifyContent: 'flex-start',
+      flexDirection: 'row',
+      borderColor: '#ddd',
+      position: 'relative'
+    }
+  };
+  CardItem.navigationOptions = {
+    title: ""
+  };
+  exports.default = CardItem;
+});

@@ -1,0 +1,96 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var _jsxFileName = "/Users/yoncacoskun/Desktop/ReactNative/AwesomeProject/src/components/StartScreen.js";
+
+  var _react = require(_dependencyMap[0], "react");
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _reactNative = require(_dependencyMap[1], "react-native");
+
+  var _reactNavigation = require(_dependencyMap[2], "react-navigation");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var styles = {
+    imgStyle: {
+      alignSelf: 'center',
+      height: 150,
+      width: 150,
+      borderWidth: 1,
+      borderRadius: 75
+    },
+    textStyle: {
+      width: 270,
+      height: 80,
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingTop: 30,
+      marginLeft: 260,
+      marginBottom: 30,
+      marginTop: 40,
+      fontWeight: 'bold',
+      fontSize: 20
+    },
+    buttonStyle: {
+      backgroundColor: '#47D978',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginLeft: 280,
+      marginRight: 280
+    },
+    welcome: {
+      fontSize: 20,
+      textAlign: "center",
+      margin: 10
+    }
+  };
+
+  var StartScreen = function StartScreen(props) {
+    var navigate = props.navigation.navigate;
+    var imgStyle = styles.imgStyle;
+    return _react2.default.createElement(
+      _reactNative.View,
+      {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        }
+      },
+      _react2.default.createElement(_reactNative.Image, {
+        style: imgStyle,
+        source: require(_dependencyMap[3], './brain.jpg'),
+        resizeMode: "stretch",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        }
+      }),
+      _react2.default.createElement(
+        _reactNative.Text,
+        {
+          style: styles.welcome,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55
+          }
+        },
+        "Learn How Smart You Are !"
+      ),
+      _react2.default.createElement(_reactNative.Button, {
+        onPress: function onPress() {
+          return navigate("QuesScreen");
+        },
+        title: "START",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        }
+      })
+    );
+  };
+
+  exports.default = StartScreen;
+});

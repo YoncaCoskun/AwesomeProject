@@ -1,0 +1,211 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = require(_dependencyMap[1], "./../react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/yoncacoskun/Desktop/ReactNative/AwesomeProject/node_modules/react-native-animated-header-scroll-view/index.js";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = require(_dependencyMap[2], "react-native");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        AnimatedHeaderScrollView: {
+            displayName: "AnimatedHeaderScrollView"
+        }
+    };
+
+    var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/yoncacoskun/Desktop/ReactNative/AwesomeProject/node_modules/react-native-animated-header-scroll-view/index.js",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _reactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var HEADER_MIN_HEIGHT = 60;
+    var HEADER_MAX_HEIGHT = 160;
+    var ROOT_CHILDREN_HEIGHT = 60;
+
+    var AnimatedHeaderScrollView = _wrapComponent("AnimatedHeaderScrollView")(function (_React$Component) {
+        _inherits(AnimatedHeaderScrollView, _React$Component);
+
+        function AnimatedHeaderScrollView(props) {
+            _classCallCheck(this, AnimatedHeaderScrollView);
+
+            var _this = _possibleConstructorReturn(this, (AnimatedHeaderScrollView.__proto__ || Object.getPrototypeOf(AnimatedHeaderScrollView)).call(this, props));
+
+            _this.data = {
+                scrollY: new _reactNative.Animated.Value(0)
+            };
+            _this.conf = {
+                headerMaxHeight: _this.props.headerMaxHeight || HEADER_MAX_HEIGHT,
+                headerMinHeight: _this.props.headerMinHeight || HEADER_MIN_HEIGHT,
+                rootChildrenHeight: _this.props.rootChildrenHeight || ROOT_CHILDREN_HEIGHT
+            };
+            _this.conf.headerScrollDistance = _this.conf.headerMaxHeight - _this.conf.headerMinHeight;
+            var scrollY = _this.data.scrollY;
+            _this.headerY = scrollY.interpolate({
+                inputRange: [0, _this.conf.headerScrollDistance],
+                outputRange: [0, -_this.conf.headerScrollDistance],
+                extrapolate: 'clamp'
+            });
+            _this.controlsY = scrollY.interpolate({
+                inputRange: [0, _this.conf.headerScrollDistance],
+                outputRange: [_this.conf.headerMaxHeight - _this.conf.rootChildrenHeight / 2, _this.conf.headerMinHeight - _this.conf.rootChildrenHeight / 2],
+                extrapolate: 'clamp'
+            });
+            return _this;
+        }
+
+        _createClass(AnimatedHeaderScrollView, [{
+            key: "getScroll",
+            value: function getScroll() {
+                return this.data.scrollY;
+            }
+        }, {
+            key: "getConfig",
+            value: function getConfig() {
+                return this.conf;
+            }
+        }, {
+            key: "render",
+            value: function render() {
+                var onScroll = this.props.onScroll;
+                var scrollY = this.data.scrollY;
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        style: styles.container,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 53
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNative.Animated.ScrollView,
+                        {
+                            style: styles.container,
+                            scrollEventThrottle: 1,
+                            onScroll: _reactNative.Animated.event([{
+                                nativeEvent: {
+                                    contentOffset: {
+                                        y: scrollY
+                                    }
+                                }
+                            }], {
+                                useNativeDriver: true
+                            }),
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 54
+                            }
+                        },
+                        _react3.default.createElement(_reactNative.View, {
+                            style: {
+                                height: this.conf.headerMaxHeight
+                            },
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 61
+                            }
+                        }),
+                        this.props.children
+                    ),
+                    _react3.default.createElement(_reactNative.Animated.View, {
+                        style: [styles.resizingHeader, {
+                            height: this.conf.headerMaxHeight,
+                            transform: [{
+                                translateY: this.headerY
+                            }]
+                        }],
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 64
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNative.View,
+                        {
+                            style: [styles.headerChildren, {
+                                height: this.conf.headerMaxHeight
+                            }],
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 67
+                            }
+                        },
+                        this.props.headerChildren
+                    ),
+                    _react3.default.createElement(
+                        _reactNative.Animated.View,
+                        {
+                            style: [styles.floatingControls, {
+                                transform: [{
+                                    translateY: this.controlsY
+                                }]
+                            }],
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 70
+                            }
+                        },
+                        this.props.rootChildren
+                    )
+                );
+            }
+        }]);
+
+        return AnimatedHeaderScrollView;
+    }(_react3.default.Component));
+
+    exports.default = AnimatedHeaderScrollView;
+
+    var styles = _reactNative.StyleSheet.create({
+        container: {
+            flex: 1
+        },
+        resizingHeader: {
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: '#48e',
+            elevation: 10
+        },
+        headerChildren: {
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            elevation: 11
+        },
+        floatingControls: {
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            elevation: 12
+        }
+    });
+});
