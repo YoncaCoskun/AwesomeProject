@@ -1,5 +1,5 @@
 import React from 'react';
-import {Animated, Dimensions, StyleSheet, View,Text} from 'react-native';
+import {Animated, Dimensions, View} from 'react-native';
 
 /*const QuesCardSection = (props) => {
 return(

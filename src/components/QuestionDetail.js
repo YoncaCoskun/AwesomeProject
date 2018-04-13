@@ -1,4 +1,4 @@
-import React , { Component } from 'react';
+import React   from 'react';
 import {Text, Alert, Image, View} from 'react-native';
 import CardItem from './CardItem';
 import RadioForm from 'react-native-radio-form';

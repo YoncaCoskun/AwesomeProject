@@ -1,7 +1,5 @@
 import React from "react";
 import { StyleSheet, Text, Button, View ,Image} from "react-native";
-import { StackNavigator } from "react-navigation";
-
 const styles = {
   imgStyle: {
     alignSelf: 'center',

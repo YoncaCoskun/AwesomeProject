@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import {ScrollView, StyleSheet, Text, View, Animated, Dimensions} from "react-native";
+import { Animated, Dimensions} from "react-native";
 import QuestionDetail from './QuestionDetail';
-import AnimatedHeaderScrollView from 'react-native-animated-header-scroll-view';
 
 const xOffset = new Animated.Value(0);
 const SCREEN_WIDTH = Dimensions.get("window").width;

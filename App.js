@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React  from "react";
 import StartScreen from './src/components/StartScreen';
 import { StackNavigator } from "react-navigation";
 import QuesScreen from './src/components/QuesScreen';

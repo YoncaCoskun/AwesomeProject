@@ -1,7 +1,5 @@
 import React from 'react';
-import { View ,ScrollView,Animated} from 'react-native';
-import QuesScreen from "./QuesScreen";
-import AnimatedHeaderScrollView from 'react-native-animated-header-scroll-view';
+import { View } from 'react-native';
 
 const CardItem = (props) => {
   const { containerStyle } = styles;
@@ -17,7 +15,6 @@ const styles = {
   containerStyle:{
     borderWidth: 1,
     borderRadius: 2,
-    //borderColor:'#ddd',
     borderBottomWidth: 0,
     shadowColor:'#ddd',
     shadowOffset:{ width: 0, height: 2},
